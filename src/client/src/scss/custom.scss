@@ -3,3 +3,18 @@
 // $body-color: #111;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+#results {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+
+.recipe {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.recipe img {
+  width: 100%;
+}

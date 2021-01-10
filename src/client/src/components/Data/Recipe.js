@@ -1,0 +1,31 @@
+export default function Recipe(props) {
+  return (
+    <article className="recipe card">
+      <img src={props.recipe.imageLink} className="card-img-top" alt="bidu"/>
+      <section className="card-body">
+      <h5 className="card-title"><a href={props.recipe.link}>{props.recipe.title}</a></h5>
+      <h6>Published by <a href="https://keepinitkind.com"><strong>{props.recipe.author}</strong></a> on {props.recipe.plublishedAt}</h6>
+      <div className="ingredients">
+        <ul>
+          <li>2 cups pitted Medjool Dates</li>
+          <li>1 cup Almond Meal</li>
+          <li>1 cup sweetened Coconut flakes</li>
+          <li>1/2 cup Cacao Nibs</li>
+          <li>1/2 cup ground Organic Chia Seeds</li>
+          <li>1/4 cup Maca/Cacao/ Hemp Powder</li>
+          <li>( I used Navitas brand Organic Superfoods blend)</li>
+          <li>1/3 cup Cocoa Powder - non-alkaline</li>
+          <li>1 Tbs. ground Cinnamon</li>
+          <li>1 tsp Coarse Sea Salt</li>
+          <li>1/ 4 cup Maple Syrup</li>
+          <li>Optional 1 cup Non-Dairy Chocolate or Carob Chips</li>
+          <li>1 cup shelled Pistachio Nuts - raw</li>
+          <li>1/3 cup Maple Syrup</li>
+          <li>2 Tbs. Chia Seeds</li>
+          <li>Pinch of Sea Salt</li>
+        </ul>
+      </div>
+      </section>
+    </article>
+  );
+}

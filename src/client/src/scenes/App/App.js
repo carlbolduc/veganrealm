@@ -7,7 +7,8 @@ import About from "../About/About";
 import Footer from "../../components/Footer/Footer";
 
 export default function App() {
-  const [ recipesCount, setRecipesCount ] = useState(null);
+  const [recipesCount, setRecipesCount] = useState(null);
+
 
   useEffect(() =>{
     axios.get(`${process.env.REACT_APP_API}/statistics/recipes-count`).then(res => {
