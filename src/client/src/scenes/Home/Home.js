@@ -41,7 +41,7 @@ export default function Home() {
           Search the Realm
         </button>
       </form>
-      <div id="results" className="container">
+      <div id="results" className="container-xxl">
         <div className="row row-cols-auto justify-content-center">
           {results}
         </div>
