@@ -17,3 +17,6 @@ src/client/build
 
 # test coverage
 src/client/coverage
+
+# other stuff
+.DS_Store
