@@ -14,7 +14,9 @@ export default function Home() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios.get(`${process.env.REACT_APP_API}/recipes/${search}`).then(res => {
+    const string = JSON.stringify({ terms: search, offset: 0 });
+    axios.get(`${process.env.REACT_APP_API}/recipes?q=${btoa(string)}`).then(res => {
+      debugger
       setRecipes(res.data.recipes);
     });
   }
@@ -33,6 +35,7 @@ export default function Home() {
           placeholder="Type ingredient names..."
           value={search}
           onChange={handleChange}
+          autoComplete="chrome-is-buggy"
         />
         <button
           type="submit"

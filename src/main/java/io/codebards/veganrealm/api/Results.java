@@ -3,17 +3,9 @@ package io.codebards.veganrealm.api;
 import java.util.List;
 
 public class Results {
-    private String query;
     private List<Recipe> recipes;
-    private List<Facet> facets;
-
-    public Results(String query) {
-        this.query = query;
-    }
-
-    public String getQuery() {
-        return query;
-    }
+    private Boolean hasMore;
+    private Long nextOffset;
 
     public List<Recipe> getRecipes() {
         return recipes;
@@ -23,12 +15,20 @@ public class Results {
         this.recipes = recipes;
     }
 
-    public List<Facet> getFacets() {
-        return facets;
+    public Boolean getHasMore() {
+        return hasMore;
     }
 
-    public void setFacets(List<Facet> facets) {
-        this.facets = facets;
+    public void setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
+    }
+
+    public Long getNextOffset() {
+        return nextOffset;
+    }
+    
+    public void setNextOffset(Long nextOffset) {
+        this.nextOffset = nextOffset;
     }
 
 }

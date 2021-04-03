@@ -1,16 +1,21 @@
 package io.codebards.veganrealm.resources;
 
-import io.codebards.veganrealm.api.Facet;
 import io.codebards.veganrealm.api.Recipe;
 import io.codebards.veganrealm.api.Results;
+import io.codebards.veganrealm.api.Search;
 import io.codebards.veganrealm.db.Dao;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import java.util.ArrayList;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Response;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Path("/recipes")
 public class RecipeResource {
@@ -22,30 +27,28 @@ public class RecipeResource {
     }
 
     @GET
-    public List<Recipe> getRecipes() {
-        return new ArrayList<>();
-    }
-
-    @GET
-    @Path("/{keyword}")
-    public Results getResults(@PathParam("keyword") String keyword) {
-        Results results = new Results(keyword);
-        results.setRecipes(dao.findAllRecipes(keyword));
-        List<Integer> ids = results.getRecipes().stream().map(Recipe::getId).collect(Collectors.toList());
-        List<Facet> facets = new ArrayList<>();
-        if (!ids.isEmpty()) {
-            Facet authorFacet = new Facet("author");
-            authorFacet.setFacetValues(dao.listAuthorFacetValues(ids));
-            facets.add(authorFacet);
+    public Response getRecipes(@QueryParam("q") String q) {
+        Response response;
+        String decodedQuery = new String(Base64.getDecoder().decode(q), StandardCharsets.UTF_8);
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            Search search = mapper.readValue(decodedQuery, Search.class);
+            Results results = new Results();
+            List<Recipe> recipes = dao.searchRecipes(search);
+            if (recipes.size() == 20) {
+                results.setHasMore(true);
+                results.setNextOffset(search.getOffset() + 20L);
+            } else {
+                results.setHasMore(false);
+                results.setNextOffset(0L);
+            }
+            results.setRecipes(recipes);
+            response = Response.status(Response.Status.OK).entity(results).build();
+        } catch (IOException e) {
+            e.printStackTrace();
+            response = Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-        results.setFacets(facets);
-        return results;
-    }
-
-    @GET
-    @Path("/date/{keyword}")
-    public List<Recipe> getRecipesSortedByDate(@PathParam("keyword") String keyword) {
-        return dao.findAllRecipesSortedByDate(keyword);
+        return response;
     }
 
 }
