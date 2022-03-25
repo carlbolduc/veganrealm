@@ -1,39 +1,27 @@
 package io.codebards.veganrealm;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import io.codebards.veganrealm.core.ThirdPartyFactory;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Config extends Configuration {
     @Valid
     @NotNull
     private final DataSourceFactory database = new DataSourceFactory();
-    private String rewriteConfPath;
-
     @Valid
     @NotNull
-    private final ThirdPartyFactory thirdPartyFactory = new ThirdPartyFactory();
+    private final Map<String, Map<String, String>> views = new HashMap<>();
 
-    @JsonProperty("database")
     public DataSourceFactory getDatabase() {
         return database;
     }
 
-    @JsonProperty("thirdParty")
-    public ThirdPartyFactory getThirdPartyFactory() {
-        return thirdPartyFactory;
+    public Map<String, Map<String, String>> getViews() {
+        return views;
     }
 
-    @JsonProperty
-    public String getRewriteConfPath() {
-        return this.rewriteConfPath;
-    }
-
-    public void setRewriteConfPath(String rewriteConfPath) {
-        this.rewriteConfPath = rewriteConfPath;
-    }
 }

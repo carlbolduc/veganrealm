@@ -1,0 +1,14 @@
+body {
+    font-family: sans-serif;
+    background-color: #FBF8F3;;
+}
+
+h1 {
+    text-align: center;
+}
+
+.recipe {
+    background-color: #FFF;
+    margin: 1rem;
+    padding: 1rem;
+}

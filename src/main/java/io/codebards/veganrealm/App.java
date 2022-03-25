@@ -1,7 +1,7 @@
 package io.codebards.veganrealm;
 
 import io.codebards.veganrealm.db.Dao;
-import io.codebards.veganrealm.resources.RecipeResource;
+import io.codebards.veganrealm.resources.HomeResource;
 import io.codebards.veganrealm.resources.StatisticsResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
@@ -12,12 +12,10 @@ import io.dropwizard.jdbi3.JdbiFactory;
 import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import org.eclipse.jetty.servlets.CrossOriginFilter;
+import io.dropwizard.views.ViewBundle;
 import org.jdbi.v3.core.Jdbi;
 
-import javax.servlet.DispatcherType;
-import javax.servlet.FilterRegistration;
-import java.util.EnumSet;
+import java.util.Map;
 
 public class App extends Application<Config> {
     public static void main(String[] args) throws Exception {
@@ -39,8 +37,13 @@ public class App extends Application<Config> {
                 return config.getDatabase();
             }
         });
-        bootstrap.addBundle(new UrlRewriteBundle());
-        bootstrap.addBundle(new AssetsBundle("/assets/", "/", "index.html"));
+        bootstrap.addBundle(new AssetsBundle());
+        bootstrap.addBundle(new ViewBundle<>() {
+            @Override
+            public Map<String, Map<String, String>> getViewConfiguration(Config config) {
+                return config.getViews();
+            }
+        });
     }
 
     @Override
@@ -50,21 +53,10 @@ public class App extends Application<Config> {
 
         final Dao dao = jdbi.onDemand(Dao.class);
         final StatisticsResource statisticsResource = new StatisticsResource(dao);
-        final RecipeResource recipeResource = new RecipeResource(dao);
-
-        if (config.getThirdPartyFactory().getEnv().equals("development")) {
-            setupCors(environment);
-        }
+        final HomeResource homeResource = new HomeResource(dao);
 
         environment.jersey().register(statisticsResource);
-        environment.jersey().register(recipeResource);
+        environment.jersey().register(homeResource);
     }
 
-    private void setupCors(Environment environment) {
-        final FilterRegistration.Dynamic filterRegistration = environment.servlets().addFilter("crossOriginRequests", CrossOriginFilter.class);
-        filterRegistration.addMappingForUrlPatterns(EnumSet.of(DispatcherType.REQUEST), true, "/*");
-        filterRegistration.setInitParameter(CrossOriginFilter.ALLOWED_ORIGINS_PARAM, "*");
-        filterRegistration.setInitParameter(CrossOriginFilter.ALLOWED_HEADERS_PARAM, "*");
-        filterRegistration.setInitParameter(CrossOriginFilter.ALLOWED_METHODS_PARAM, "PUT,GET,POST,DELETE,OPTIONS");
-    }
 }

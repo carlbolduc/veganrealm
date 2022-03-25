@@ -4,6 +4,7 @@ import io.codebards.veganrealm.api.Recipe;
 import io.codebards.veganrealm.api.Search;
 
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
+import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 
@@ -14,15 +15,14 @@ public interface Dao {
     @SqlQuery("SELECT 'bidu'")
     String healthCheck();
 
-    @SqlQuery("SELECT COUNT(*) FROM recipes")
+    @SqlQuery("SELECT COUNT(*) FROM recipe")
     int countAllRecipes();
 
-    @SqlQuery("SELECT id, author, title, link, image_link, ingredients, published_at\n" +
-              "FROM recipes\n" +
-              "WHERE weighted_tsv @@ plainto_tsquery(:terms)\n" +
-              "ORDER BY ts_rank(weighted_tsv, plainto_tsquery(:terms)) DESC, id DESC\n" +
-              "LIMIT 20 OFFSET :offset")
+    @SqlQuery("SELECT * FROM recipe")
     @RegisterBeanMapper(Recipe.class)
-    List<Recipe> searchRecipes(@BindBean Search search);
+    List<Recipe> findAll();
 
+    @SqlQuery("SELECT * FROM recipe WHERE name LIKE '%' || :terms || '%'")
+    @RegisterBeanMapper(Recipe.class)
+    List<Recipe> find(@Bind("terms") String terms);
 }

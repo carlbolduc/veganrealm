@@ -4,20 +4,17 @@ import java.time.Instant;
 
 public class Recipe {
 
-    private int id;
+    private Integer id;
     private String author;
-    private String imageLink;
-    private String ingredients;
-    private String link;
-    private String title;
-    private Instant publishedAt;
+    private String name;
+    private Instant createdAt;
+    private Instant updatedAt;
 
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -29,43 +26,27 @@ public class Recipe {
         this.author = author;
     }
 
-    public String getImageLink() {
-        return imageLink;
+    public String getName() {
+        return name;
     }
 
-    public void setImageLink(String imageLink) {
-        this.imageLink = imageLink;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getIngredients() {
-        return ingredients;
+    public Instant getCreatedAt() {
+        return createdAt;
     }
 
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public String getLink() {
-        return link;
+    public Instant getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Instant getPublishedAt() {
-        return publishedAt;
-    }
-
-    public void setPublishedAt(Instant publishedAt) {
-        this.publishedAt = publishedAt;
+    public void setUpdatedAt(Instant updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

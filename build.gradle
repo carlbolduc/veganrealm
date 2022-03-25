@@ -20,19 +20,25 @@ plugins {
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    implementation 'org.postgresql:postgresql:42.2.16'
+    implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
+    implementation 'io.dropwizard:dropwizard-assets:2.0.13'
     implementation 'io.dropwizard:dropwizard-core:2.0.13'
     implementation 'io.dropwizard:dropwizard-jdbi3:2.0.13'
     implementation 'io.dropwizard:dropwizard-migrations:2.0.13'
-    implementation 'io.dropwizard:dropwizard-assets:2.0.13'
-    implementation 'org.tuckey:urlrewritefilter:4.0.3'
+    implementation 'io.dropwizard:dropwizard-views-freemarker:2.0.13'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13'
+}
+
+shadowJar {
+    archiveBaseName.set('veganrealm')
+    archiveClassifier.set('')
+    archiveVersion.set('')
 }
 
 application {

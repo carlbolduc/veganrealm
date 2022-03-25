@@ -1,11 +1,11 @@
-server:
-  rootPath: /api/
 database:
-  driverClass: org.postgresql.Driver
-  user: ${DB_USER:-dbu}
-  password: ${DB_PASSWORD:-bidu}
-  url: jdbc:postgresql://${DB_HOST:-localhost/veganrealm}
+  driverClass: org.sqlite.JDBC
+  url: jdbc:sqlite:veganrealm.db
   properties:
     charSet: UTF-8
-thirdParty:
-  env: ${ENV:-production}
+    foreign_keys: true
+views:
+  freemarker:
+    strict_syntax: true
+  mustache:
+    cache: false

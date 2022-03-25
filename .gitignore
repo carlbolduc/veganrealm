@@ -10,6 +10,7 @@ bin
 .classpath
 .project
 .eslintcache
+*.db
 
 # dependencies
 src/client/node_modules
