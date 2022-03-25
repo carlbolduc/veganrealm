@@ -24,7 +24,7 @@ public class HomeResource {
     @GET
     public HomeView getHome(@QueryParam("q") String q) {
         List<Recipe> recipes;
-        if (q.equals("")) {
+        if (q == null || q.equals("")) {
             recipes = dao.findAll();
         } else {
             recipes = dao.find(q);
