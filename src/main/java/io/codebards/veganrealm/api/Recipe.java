@@ -4,18 +4,20 @@ import java.time.Instant;
 
 public class Recipe {
 
-    private Integer id;
+    private Integer recipeId;
     private String author;
+    private String url;
     private String name;
+    private String photo;
     private Instant createdAt;
     private Instant updatedAt;
 
-    public Integer getId() {
-        return id;
+    public Integer getRecipeId() {
+        return recipeId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setRecipeId(Integer recipeId) {
+        this.recipeId = recipeId;
     }
 
     public String getAuthor() {
@@ -26,12 +28,28 @@ public class Recipe {
         this.author = author;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public Instant getCreatedAt() {
@@ -49,4 +67,5 @@ public class Recipe {
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }

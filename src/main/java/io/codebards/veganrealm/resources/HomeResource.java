@@ -27,7 +27,7 @@ public class HomeResource {
         if (q == null || q.equals("")) {
             recipes = dao.findAll();
         } else {
-            recipes = dao.find(q);
+            recipes = dao.findRecipeByIds(q);
         }
         return new HomeView(recipes);
     }

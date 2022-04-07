@@ -1,14 +1,89 @@
+/* Begin reset stuff (thank you Josh Comeau; https://www.joshwcomeau.com/css/custom-css-reset) */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+/* End reset */
+
 body {
     font-family: sans-serif;
-    background-color: #FBF8F3;;
 }
 
 h1 {
     text-align: center;
 }
 
+h2 {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+h2 a {
+    text-decoration: none;
+    color: rgb(26, 30, 39);
+}
+
+h2 a:hover {
+    text-decoration: underline;
+    color: rgb(26, 30, 39);
+}
+
+h2 a:visited {
+    color: rgb(26, 30, 39);
+}
+
+#search {
+    text-align: center;
+}
+
+#search-input {
+    width: 80%;
+    max-width: 400px;
+}
+
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .recipe {
     background-color: #FFF;
     margin: 1rem;
-    padding: 1rem;
+    padding: 0;
+    width: 200px;
+}
+
+.recipe-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.small {
+    font-size: .9em;
 }

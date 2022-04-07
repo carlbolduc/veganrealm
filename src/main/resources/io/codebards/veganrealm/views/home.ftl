@@ -6,17 +6,23 @@
 <body>
 <h1>Vegan Realm</h1>
 
-<form action="/" method="get">
-    <input id="search" type="search" name="q">
-    <input type="submit" value="search" />
-</form>
-<#list recipes as recipe>
-    <div class="recipe">
-        <h2>${recipe.name}</h2>
-        <h3>Author: ${recipe.author}</h3>
-        <strong>Ingredients</strong>
-    </div>
-</#list>
+<div id="search">
+    <form action="/" method="get">
+        <input id="search-input" type="search" name="q">
+        <input type="submit" value="search" />
+    </form>
+</div>
+<div id="results">
+    <#list recipes as recipe>
+        <div class="recipe">
+            <a href="${recipe.url}">
+                <img class="recipe-picture" src="${recipe.photo}" alt="${recipe.name}">
+            </a>
+            <h2><a href="${recipe.url}">${recipe.name}</a></h2>
+            <p class="small">By ${recipe.author}</p>
+        </div>
+    </#list>
+</div>
 <@com.populateSearchFromQueryParams />
 </body>
 </html>

@@ -12,6 +12,6 @@
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        document.getElementById("search").value = urlParams.get("q");
+        document.getElementById("search-input").value = urlParams.get("q");
     </script>
 </#macro>
