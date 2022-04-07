@@ -14,9 +14,11 @@
             <column name="author" type="clob">
                 <constraints nullable="false"/>
             </column>
-            <column name="name" type="clob">
+            <column name="url" type="clob">
                 <constraints nullable="false" unique="true"/>
             </column>
+            <column name="name" type="clob"/>
+            <column name="ingredients" type="clob"/>
             <column name="photo" type="clob"/>
             <column name="created_at" type="numeric"/>
             <column name="updated_at" type="numeric"/>
