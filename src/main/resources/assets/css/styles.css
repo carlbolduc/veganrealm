@@ -54,8 +54,14 @@ h2 a:visited {
     color: rgb(26, 30, 39);
 }
 
+#container {
+    max-width: 100%;
+    margin: 1rem auto;
+}
+
 #search {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 #search-input {
@@ -74,16 +80,54 @@ h2 a:visited {
     background-color: #FFF;
     margin: 1rem;
     padding: 0;
-    width: 200px;
+    width: 100%;
 }
 
 .recipe-picture {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     border-radius: 10px;
     margin-bottom: 5px;
 }
 
 .small {
     font-size: .9em;
+}
+
+#pager {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#pager a {
+    text-decoration: none;
+    color: rgb(26, 30, 39);
+}
+
+#pager a:hover {
+    text-decoration: underline;
+    color: rgb(26, 30, 39);
+}
+
+#pager a:visited {
+    color: rgb(26, 30, 39);
+}
+
+#pager li {
+    display: inline;
+    list-style-type: none;
+}
+
+@media (min-width: 576px) {
+    #container {
+        max-width: 950px;
+    }
+    .recipe {
+        width: 200px;
+    }
+
+    .recipe-picture {
+        width: 200px;
+        height: 200px;
+    }
 }

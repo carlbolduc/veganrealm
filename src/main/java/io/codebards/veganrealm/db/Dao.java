@@ -12,14 +12,17 @@ public interface Dao {
     @SqlQuery("SELECT 'bidu'")
     String healthCheck();
 
-    @SqlQuery("SELECT COUNT(*) FROM recipe")
+    @SqlQuery("SELECT COUNT(*) FROM search_recipes")
     int countAllRecipes();
 
-    @SqlQuery("SELECT * FROM recipe LIMIT 24")
+    @SqlQuery("SELECT * FROM search_recipes LIMIT 12 OFFSET :offset")
     @RegisterBeanMapper(Recipe.class)
-    List<Recipe> findAll();
+    List<Recipe> findAll(@Bind("offset") int offset);
 
-    @SqlQuery("SELECT * FROM search_recipes WHERE search_recipes MATCH :terms ORDER BY rank LIMIT 24")
+    @SqlQuery("SELECT count(recipe_id) FROM search_recipes WHERE search_recipes MATCH :terms")
+    int countRecipes(@Bind("terms") String terms);
+
+    @SqlQuery("SELECT * FROM search_recipes WHERE search_recipes MATCH :terms ORDER BY rank LIMIT 12 OFFSET :offset")
     @RegisterBeanMapper(Recipe.class)
-    List<Recipe> findRecipeByIds(@Bind("terms") String terms);
+    List<Recipe> findRecipeByIds(@Bind("terms") String terms, @Bind("offset") int offset);
 }
