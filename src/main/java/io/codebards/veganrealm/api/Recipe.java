@@ -1,7 +1,5 @@
 package io.codebards.veganrealm.api;
 
-import java.time.Instant;
-
 public class Recipe {
 
     private Integer recipeId;
@@ -9,8 +7,9 @@ public class Recipe {
     private String url;
     private String name;
     private String photo;
-    private Instant createdAt;
-    private Instant updatedAt;
+    private Integer publishedAt;
+    private Integer createdAt;
+    private Integer updatedAt;
 
     public Integer getRecipeId() {
         return recipeId;
@@ -52,20 +51,29 @@ public class Recipe {
         this.photo = photo;
     }
 
-    public Instant getCreatedAt() {
+    public Integer getPublishedAt() {
+        return publishedAt;
+    }
+
+    public void setPublishedAt(Integer publishedAt) {
+        this.publishedAt = publishedAt;
+    }
+
+    public Integer getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Instant createdAt) {
+    public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Instant getUpdatedAt() {
+    public Integer getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Instant updatedAt) {
+    public void setUpdatedAt(Integer updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 
 }

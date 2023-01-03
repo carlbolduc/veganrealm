@@ -7,22 +7,20 @@
          https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="1" author="carl">
-        <createTable tableName="recipe">
-            <column name="recipe_id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="author" type="clob">
-                <constraints nullable="false"/>
-            </column>
-            <column name="url" type="clob">
-                <constraints nullable="false" unique="true"/>
-            </column>
-            <column name="name" type="clob"/>
-            <column name="ingredients" type="clob"/>
-            <column name="photo" type="clob"/>
-            <column name="created_at" type="numeric"/>
-            <column name="updated_at" type="numeric"/>
-        </createTable>
+        <sql>
+            CREATE TABLE recipe
+            (
+                recipe_id       INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                name            TEXT,
+                author          TEXT,
+                ingredients     TEXT,
+                photo           TEXT,
+                url             TEXT,
+                published_at    INTEGER,
+                created_at      INTEGER,
+                updated_at      INTEGER
+            );
+        </sql>
     </changeSet>
 
 </databaseChangeLog>
