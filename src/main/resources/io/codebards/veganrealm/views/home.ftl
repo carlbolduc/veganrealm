@@ -10,7 +10,11 @@
     <div id="search">
         <form action="/" method="get">
             <input id="search-input" type="search" name="q" value="${search.terms}">
-            <input type="submit" value="search"/>
+            <button id="search-button" class="pushable" type="submit">
+                <span class="shadow"></span>
+                <span class="edge"></span>
+                <span class="front">Search</span>
+            </button>
         </form>
     </div>
     <div id="results">
@@ -29,7 +33,7 @@
             <#list pages as page>
                 <li>
                     <#if 12 * page.number() - 12 == search.offset>
-                        <strong><a href="/?q=${search.terms}&o=${12 * page.number() - 12}">${page.number()}</a></strong>
+                        <strong><a href="/?q=${search.terms}&o=${12 * page.number() - 12}" class="current-page">${page.number()}</a></strong>
                     <#else>
                         <a href="/?q=${search.terms}&o=${12 * page.number() - 12}">${page.number()}</a>
                     </#if>
