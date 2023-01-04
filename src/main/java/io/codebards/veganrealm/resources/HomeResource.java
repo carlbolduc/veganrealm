@@ -27,10 +27,10 @@ public class HomeResource {
         search.setOffset(o == null ? 0 : o);
         if (q == null || q.equals("")) {
             search.setTotal(dao.countAllRecipes());
-            search.setRecipes(dao.findAll(search.getOffset()));
+            search.setRecipes(dao.listRecipes(search.getOffset()));
         } else {
             search.setTotal(dao.countRecipes(q));
-            search.setRecipes(dao.findRecipeByIds(q, search.getOffset()));
+            search.setRecipes(dao.searchRecipes(q, search.getOffset()));
         }
         return new HomeView(search);
     }

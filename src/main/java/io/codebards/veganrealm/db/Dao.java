@@ -15,14 +15,14 @@ public interface Dao {
     @SqlQuery("SELECT COUNT(*) FROM search_recipes")
     int countAllRecipes();
 
-    @SqlQuery("SELECT * FROM search_recipes LIMIT 12 OFFSET :offset")
-    @RegisterBeanMapper(Recipe.class)
-    List<Recipe> findAll(@Bind("offset") int offset);
-
     @SqlQuery("SELECT count(recipe_id) FROM search_recipes WHERE search_recipes MATCH :terms")
     int countRecipes(@Bind("terms") String terms);
 
-    @SqlQuery("SELECT * FROM search_recipes WHERE search_recipes MATCH :terms ORDER BY rank LIMIT 12 OFFSET :offset")
+    @SqlQuery("SELECT * FROM search_recipes WHERE search_recipes MATCH :terms ORDER BY rank, published_at LIMIT 12 OFFSET :offset")
     @RegisterBeanMapper(Recipe.class)
-    List<Recipe> findRecipeByIds(@Bind("terms") String terms, @Bind("offset") int offset);
+    List<Recipe> searchRecipes(@Bind("terms") String terms, @Bind("offset") int offset);
+
+    @SqlQuery("SELECT * FROM search_recipes ORDER BY published_at DESC LIMIT 12 OFFSET :offset")
+    @RegisterBeanMapper(Recipe.class)
+    List<Recipe> listRecipes(@Bind("offset") int offset);
 }
