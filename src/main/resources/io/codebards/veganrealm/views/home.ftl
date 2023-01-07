@@ -7,7 +7,7 @@
 <body>
 
 <div id="container">
-    <h1>Vegan Realm</h1>
+    <h1><a href="/">Vegan Realm</a></h1>
     <div id="search">
         <form action="/" method="get">
             <input id="search-input" type="search" name="q" value="${search.terms}">
