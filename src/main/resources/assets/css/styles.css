@@ -102,6 +102,10 @@ a {
     border: 0;
 }
 
+#search-input::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
 #search-button {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
