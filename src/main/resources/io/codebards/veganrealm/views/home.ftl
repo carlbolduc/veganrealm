@@ -23,9 +23,9 @@
             <div class="recipe">
                 <a href="${recipe.url}">
                     <img class="recipe-picture" src="${recipe.photo}" alt="${recipe.name}">
+                    <h2>${recipe.name}</h2>
+                    <p class="recipe-author">${recipe.author}</p>
                 </a>
-                <h2><a href="${recipe.url}">${recipe.name}</a></h2>
-                <p class="small">By ${recipe.author}</p>
             </div>
         </#list>
     </div>
@@ -42,6 +42,7 @@
             </#list>
         </ul>
     </div>
+    <@com.footer />
 </div>
 <@com.populateSearchFromQueryParams />
 </body>

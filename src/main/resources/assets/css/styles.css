@@ -35,7 +35,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* End reset */
 body {
-    font-family: 'The Girl Next Door', cursive;;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
     background-color: hsl(210deg, 30%, 8%);
     color: #fff;
 }
@@ -44,25 +45,28 @@ h1 {
     font-size: 3rem;
     text-align: center;
     margin: 2rem;
+    font-weight: 300;
 }
 
 h2 {
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 200;
+    line-height: 1.1em;
 }
 
-h2 a {
+a {
     text-decoration: none;
     color: #fff;
 }
 
-h2 a:hover {
-    text-decoration: underline;
-    color: #fff;
+.recipe {
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
-h2 a:visited {
-    color: #fff;
+.recipe:hover {
+    transform: perspective(500px) rotateX(0deg) rotateY(-10deg) scale3d(1,1,1);
 }
 
 #container {
@@ -99,12 +103,14 @@ h2 a:visited {
     width: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     object-fit: cover;
 }
 
-.small {
+.recipe-author {
     font-size: .9em;
+    margin-top: 0.2em;
+    line-height: 1.3em;
     color: hsl(210deg, 14%, 66%);
 }
 
@@ -136,7 +142,6 @@ h2 a:visited {
     display: inline;
     list-style-type: none;
 }
-
 
 .pushable {
     position: relative;
@@ -192,7 +197,7 @@ h2 a:visited {
 
 .search-button-icon {
     position: relative;
-    top: 4px;
+    top: 0px;
 }
 
 .pushable:hover {
@@ -227,6 +232,12 @@ h2 a:visited {
     text-shadow: 0 1px hsl(230deg, 100%, 69%);
 }
 
+.tiny {
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
 @media (min-width: 576px) {
     #container {

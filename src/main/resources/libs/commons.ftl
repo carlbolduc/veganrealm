@@ -3,11 +3,17 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" media="screen"/>
         <title>${title}</title>
         <meta name="description" content="${description}" />
     </head>
+</#macro>
+
+<#macro footer>
+    <footer id="footer">
+        <p class="tiny">© 2023 <a href="https://codebards.io/">Code Bards</a>. All rights reserved. <a href="https://codebards.io/policies">Terms &amp; Privacy</a>.</p>
+    </footer>
 </#macro>
 
 <#macro populateSearchFromQueryParams>
