@@ -93,7 +93,7 @@ h2 a:visited {
 .recipe {
     margin: 1rem;
     padding: 0;
-    width: 100%;
+    width: 40%;
 }
 
 .recipe-picture {
@@ -127,6 +127,10 @@ h2 a:visited {
 
 #pager a:visited {
     color: hsl(210deg, 14%, 66%);
+}
+
+#pager ul {
+  padding: 0;
 }
 
 #pager li {
