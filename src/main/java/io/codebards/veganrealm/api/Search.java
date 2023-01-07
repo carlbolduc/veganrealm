@@ -16,7 +16,7 @@ public class Search {
     public void setTerms(String terms) {
         this.terms = terms;
     }
-
+    
     public int getTotal() {
         return total;
     }

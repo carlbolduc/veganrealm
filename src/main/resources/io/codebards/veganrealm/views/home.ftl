@@ -1,4 +1,5 @@
 <#-- @ftlvariable name="" type="io.codebards.veganrealm.views.HomeView" -->
+<#setting number_format="computer">
 <#import "/libs/commons.ftl" as com>
 <!DOCTYPE html>
 <html lang="en">
