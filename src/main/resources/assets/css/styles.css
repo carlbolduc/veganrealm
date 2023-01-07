@@ -101,6 +101,7 @@ a {
     border: 0;
 }
 
+/* Hide search icon added on the left of search input on mobile */
 #search-input::-webkit-search-decoration {
     -webkit-appearance: none;
 }
