@@ -2,7 +2,7 @@
 <#import "/libs/commons.ftl" as com>
 <!DOCTYPE html>
 <html lang="en">
-<@com.head title="Vegan Realm - Your friendly vegan resources search engine" description="A hand-picked curated vegan resources search engine featuring all the best information there is on the web - recipes, health, clothing, travel, and more." />
+<@com.head title="Vegan Realm - Your friendly vegan recipe search engine" description="A search engine featuring hand-picked curated vegan recipe blogs from all over the world." />
 <body>
 
 <div id="container">
