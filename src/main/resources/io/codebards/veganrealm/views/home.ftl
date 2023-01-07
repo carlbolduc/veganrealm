@@ -34,7 +34,7 @@
             <#list pages as page>
                 <li>
                     <#if 12 * page.number() - 12 == search.offset>
-                        <strong><a href="/?q=${search.terms}&o=${12 * page.number() - 12}" class="current-page">${page.number()}</a></strong>
+                        <span class="current-page">${page.number()}</span>
                     <#else>
                         <a href="/?q=${search.terms}&o=${12 * page.number() - 12}">${page.number()}</a>
                     </#if>
