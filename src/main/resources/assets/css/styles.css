@@ -94,21 +94,19 @@ a {
 }
 
 #search-input {
-    width: 74%;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    width: 72%;
+    border-radius: 6px 0 0 6px;
     padding: 10px;
     font-size: 1.8rem;
     border: 0;
 }
 
 #search-button {
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-radius: 0 6px 6px 0;
     font-size: 1.8rem;
     border: 0;
     background: hsl(230deg, 100%, 80%);
-    padding: 10px;
+    padding: 10px 15px;
     cursor: pointer;
 }
 
@@ -203,7 +201,7 @@ a {
     }
 
     #search-input {
-        max-width: 370px;
+        max-width: 364px;
     }
 
     .recipe {
@@ -216,17 +214,17 @@ a {
     }
 }
 
-@media (min-width: 695px) {
+@media (min-width: 696px) {
     #search-input {
         width: 85%;
-        max-width: 602px;
+        max-width: 596px;
     }
 }
 
 @media (min-width: 928px) {
     #search-input {
         width: 89%;
-        max-width: 832px;
+        max-width: 827px;
     }
 }
 
