@@ -11,7 +11,7 @@
 </#macro>
 
 <#macro footer>
-    <footer id="footer">
+    <footer>
         <p class="tiny">© 2023 <a href="https://codebards.io/">Code Bards</a>. All rights reserved. <a href="https://codebards.io/policies">Terms &amp; Privacy</a>.</p>
     </footer>
 </#macro>

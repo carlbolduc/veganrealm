@@ -7,10 +7,6 @@
     margin: 0;
 }
 
-html, body {
-    height: 100%;
-}
-
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -32,8 +28,26 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
     isolation: isolate;
 }
-
 /* End reset */
+
+html, body, #root {
+    height: 100%;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    flex-shrink: 0;
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 1em;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
@@ -246,6 +260,7 @@ a {
 
 @media (min-width: 576px) {
     #container {
+        width: 100%;
         max-width: 950px;
     }
 
