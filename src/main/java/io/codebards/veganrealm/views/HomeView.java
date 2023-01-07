@@ -48,8 +48,12 @@ public class HomeView extends View {
                             pages.add(new Page(search.getTerms(), (int) i));
                         }
                     } else {
-                        // get 4 before and 5 after
-                        for (double i = pageNumber - 4; i <= Math.ceil(pageNumber + 4); i++) {
+                        // get 4 before and 5 after if possible
+                        double limit = pageNumber + 4;
+                        if (limit > pagesCount) {
+                            limit = pagesCount;
+                        }
+                        for (double i = pageNumber - 4; i <= Math.ceil(limit); i++) {
                             pages.add(new Page(search.getTerms(), (int) i));
                         }
                     }

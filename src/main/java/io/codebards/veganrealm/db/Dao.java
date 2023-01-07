@@ -12,7 +12,7 @@ public interface Dao {
     @SqlQuery("SELECT 'bidu'")
     String healthCheck();
 
-    @SqlQuery("SELECT COUNT(*) FROM search_recipes")
+    @SqlQuery("SELECT COUNT(recipe_id) FROM search_recipes")
     int countAllRecipes();
 
     @SqlQuery("SELECT count(recipe_id) FROM search_recipes WHERE search_recipes MATCH :terms")
