@@ -1,0 +1,15 @@
+[Unit]
+Description=Vegan Realm
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/environment
+Type=simple
+User=grove
+WorkingDirectory=/home/grove/veganrealm
+ExecStart=/bin/bash -lc 'java -Xms512m -Xmx512m -jar veganrealm.jar server config.yml'
+TimeoutSec=15
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
