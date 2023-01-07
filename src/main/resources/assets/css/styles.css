@@ -94,11 +94,31 @@ a {
 }
 
 #search-input {
-    width: 69%;
-    border-radius: 6px;
-    padding: 10px 10px 4px 10px;
+    width: 74%;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding: 10px;
     font-size: 1.8rem;
     border: 0;
+}
+
+#search-button {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-size: 1.8rem;
+    border: 0;
+    background: hsl(230deg, 100%, 80%);
+    padding: 10px;
+    cursor: pointer;
+}
+
+#search-icon {
+    display: inline-block;
+    transition: 200ms;
+}
+
+#search-button:hover #search-icon {
+    transform: scale(1.2);
 }
 
 #results {
@@ -155,91 +175,6 @@ a {
     margin: 0 0.3em;
 }
 
-.pushable {
-    position: relative;
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-    transition: filter 250ms;
-}
-
-.shadow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 6px;
-    background: hsl(0deg 0% 0% / 0.25);
-    will-change: transform;
-    transform: translateY(2px);
-    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
-}
-
-.edge {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 6px;
-    background: linear-gradient(
-            to left,
-            hsl(230deg 100% 16%) 0%,
-            hsl(230deg 100% 32%) 8%,
-            hsl(230deg 100% 32%) 92%,
-            hsl(230deg 100% 16%) 100%
-    );
-}
-
-.front {
-    display: block;
-    position: relative;
-    border-radius: 6px;
-    will-change: transform;
-    transform: translateY(-4px);
-    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
-    padding: 5px 12px;
-    font-size: 2rem;
-    color: black;
-    background: hsl(230deg, 100%, 80%);
-}
-
-.search-button-icon {
-    position: relative;
-    top: 0;
-}
-
-.pushable:hover {
-    filter: brightness(110%);
-}
-
-.pushable:hover .front {
-    transform: translateY(-6px);
-    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-}
-
-.pushable:active .front {
-    transform: translateY(-2px);
-    transition: transform 34ms;
-}
-
-.pushable:hover .shadow {
-    transform: translateY(4px);
-    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-}
-
-.pushable:active .shadow {
-    transform: translateY(1px);
-    transition: transform 34ms;
-}
-
-.pushable:focus:not(:focus-visible) {
-    outline: none;
-}
-
 .current-page {
     font-weight: 700;
     color: hsl(230deg, 100%, 80%);
@@ -268,7 +203,7 @@ a {
     }
 
     #search-input {
-        max-width: 359px;
+        max-width: 370px;
     }
 
     .recipe {
@@ -281,17 +216,17 @@ a {
     }
 }
 
-@media (min-width: 713px) {
+@media (min-width: 695px) {
     #search-input {
         width: 85%;
-        max-width: 586px;
+        max-width: 602px;
     }
 }
 
-@media (min-width: 945px) {
+@media (min-width: 928px) {
     #search-input {
         width: 89%;
-        max-width: 819px;
+        max-width: 832px;
     }
 }
 

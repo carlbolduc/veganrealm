@@ -11,12 +11,7 @@
         <h1><a href="/">Vegan Realm</a></h1>
         <div id="search">
             <form action="/" method="get">
-                <input id="search-input" type="search" name="q" value="${search.terms}">
-                <button id="search-button" class="pushable" type="submit">
-                    <span class="shadow"></span>
-                    <span class="edge"></span>
-                    <span class="front"><span class="search-button-icon">🔍</span></span>
-                </button>
+                <input id="search-input" type="search" name="q" value="${search.terms}"><button id="search-button" type="submit"><span id="search-icon">🔍</span></button>
             </form>
         </div>
         <div id="results">
