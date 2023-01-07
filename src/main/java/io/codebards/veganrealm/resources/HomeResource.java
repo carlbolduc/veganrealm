@@ -29,8 +29,13 @@ public class HomeResource {
             search.setTotal(dao.countAllRecipes());
             search.setRecipes(dao.listRecipes(search.getOffset()));
         } else {
-            search.setTotal(dao.countRecipes(q));
-            search.setRecipes(dao.searchRecipes(q, search.getOffset()));
+            String safeSearch = q.replaceAll("[\'\\.\"]", "");
+            try {
+                search.setTotal(dao.countRecipes(safeSearch));
+                search.setRecipes(dao.searchRecipes(safeSearch, search.getOffset()));
+            } catch (Exception ex) {
+                // Do nothing
+            }
         }
         return new HomeView(search);
     }
