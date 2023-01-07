@@ -76,8 +76,7 @@ h2 a:visited {
 }
 
 #search-input {
-    width: 80%;
-    max-width: 400px;
+    width: 69%;
     border-radius: 6px;
     padding: 10px 10px 4px 10px;
     font-size: 1.8rem;
@@ -185,20 +184,15 @@ h2 a:visited {
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
-}
-
-.front.mobile-view {
     padding: 5px 12px;
     font-size: 2rem;
     color: black;
     background: hsl(230deg, 100%, 80%);
 }
 
-.front.desktop-view {
-    padding: 12px 42px;
-    font-size: 1.35rem;
-    color: white;
-    background: hsl(230deg, 100%, 69%);
+.search-button-icon {
+    position: relative;
+    top: 4px;
 }
 
 .pushable:hover {
@@ -239,6 +233,10 @@ h2 a:visited {
         max-width: 950px;
     }
 
+    #search-input {
+        max-width: 359px;
+    }
+
     .recipe {
         width: 200px;
     }
@@ -246,6 +244,20 @@ h2 a:visited {
     .recipe-picture {
         width: 200px;
         height: 200px;
+    }
+}
+
+@media (min-width: 713px) {
+    #search-input {
+        width: 85%;
+        max-width: 586px;
+    }
+}
+
+@media (min-width: 945px) {
+    #search-input {
+        width: 89%;
+        max-width: 819px;
     }
 }
 

@@ -13,8 +13,7 @@
             <button id="search-button" class="pushable" type="submit">
                 <span class="shadow"></span>
                 <span class="edge"></span>
-                <span class="mobile-view front">🔍</span>
-                <span class="desktop-view front">Search</span>
+                <span class="front"><span class="search-button-icon">🔍</span></span>
             </button>
         </form>
     </div>
