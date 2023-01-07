@@ -44,7 +44,8 @@
             </ul>
         </div>
     </div>
-    <@com.footer />
+    <#--  TODO: Send the actual recipe count  -->
+    <@com.footer recipeCount=3000 />
 </div>
 <@com.populateSearchFromQueryParams />
 </body>
