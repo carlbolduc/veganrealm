@@ -181,14 +181,24 @@ h2 a:visited {
 .front {
     display: block;
     position: relative;
-    padding: 12px 42px;
     border-radius: 6px;
-    font-size: 1.35rem;
-    color: white;
-    background: hsl(230deg, 100%, 69%);
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.front.mobile-view {
+    padding: 5px 12px;
+    font-size: 2rem;
+    color: black;
+    background: hsl(230deg, 100%, 80%);
+}
+
+.front.desktop-view {
+    padding: 12px 42px;
+    font-size: 1.35rem;
+    color: white;
+    background: hsl(230deg, 100%, 69%);
 }
 
 .pushable:hover {
@@ -238,3 +248,11 @@ h2 a:visited {
         height: 200px;
     }
 }
+
+.mobile-view { display: none; }
+.desktop-view { display: block; }
+
+@media (max-width: 575.98px) { 
+    .mobile-view { display: block; }
+    .desktop-view { display: none; }
+ }
