@@ -14,12 +14,12 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.xerial:sqlite-jdbc:3.36.0.3'
-    implementation 'io.dropwizard:dropwizard-assets:2.0.28'
-    implementation 'io.dropwizard:dropwizard-core:2.0.28'
-    implementation 'io.dropwizard:dropwizard-jdbi3:2.0.28'
-    implementation 'io.dropwizard:dropwizard-migrations:2.0.28'
-    implementation 'io.dropwizard:dropwizard-views-freemarker:2.0.28'
+    implementation 'org.xerial:sqlite-jdbc:3.40.0.0'
+    implementation 'io.dropwizard:dropwizard-assets:2.1.4'
+    implementation 'io.dropwizard:dropwizard-core:2.1.4'
+    implementation 'io.dropwizard:dropwizard-jdbi3:2.1.4'
+    implementation 'io.dropwizard:dropwizard-migrations:2.1.4'
+    implementation 'io.dropwizard:dropwizard-views-freemarker:2.1.4'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13.2'
