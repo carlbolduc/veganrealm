@@ -239,6 +239,11 @@ a {
     padding: 0;
 }
 
+.tiny a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
 @media (min-width: 576px) {
     #container {
         max-width: 950px;
