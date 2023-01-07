@@ -8,7 +8,7 @@
 
 <div id="root">
     <div id="container">
-        <h1>Vegan Realm</h1>
+        <h1><a href="/">Vegan Realm</a></h1>
         <div id="search">
             <form action="/" method="get">
                 <input id="search-input" type="search" name="q" value="${search.terms}">
@@ -35,7 +35,7 @@
                 <#list pages as page>
                     <li>
                         <#if 12 * page.number() - 12 == search.offset>
-                            <strong><a href="/?q=${search.terms}&o=${12 * page.number() - 12}" class="current-page">${page.number()}</a></strong>
+                            <span class="current-page">${page.number()}</span>
                         <#else>
                             <a href="/?q=${search.terms}&o=${12 * page.number() - 12}">${page.number()}</a>
                         </#if>

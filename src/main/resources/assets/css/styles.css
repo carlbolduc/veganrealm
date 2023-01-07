@@ -211,7 +211,7 @@ a {
 
 .search-button-icon {
     position: relative;
-    top: 0px;
+    top: 0;
 }
 
 .pushable:hover {
@@ -243,7 +243,8 @@ a {
 }
 
 .current-page {
-    text-shadow: 0 1px hsl(230deg, 100%, 69%);
+    font-weight: 700;
+    color: hsl(230deg, 100%, 80%);
 }
 
 .tiny {
