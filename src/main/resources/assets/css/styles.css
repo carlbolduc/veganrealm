@@ -275,7 +275,8 @@ a {
 .mobile-view { display: none; }
 .desktop-view { display: block; }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
+    h2 { font-size: 1.3rem; }
     .mobile-view { display: block; }
     .desktop-view { display: none; }
  }
