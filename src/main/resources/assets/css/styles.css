@@ -135,17 +135,11 @@ a {
 }
 
 #pager a {
-    text-decoration: none;
     color: hsl(210deg, 14%, 66%);
 }
 
 #pager a:hover {
-    text-decoration: underline;
-    color: hsl(210deg, 14%, 66%);
-}
-
-#pager a:visited {
-    color: hsl(210deg, 14%, 66%);
+    color: hsl(210deg, 14%, 90%);
 }
 
 #pager ul {
@@ -247,16 +241,20 @@ a {
     color: hsl(230deg, 100%, 80%);
 }
 
-.tiny {
+.footer-text {
+    color: hsl(210deg, 14%, 66%);
     font-size: 12px;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-.tiny a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
+.footer-text a {
+    color: hsl(210deg, 14%, 66%);
+}
+
+.footer-text a:hover {
+    color: hsl(210deg, 14%, 90%);
 }
 
 @media (min-width: 576px) {
