@@ -151,6 +151,10 @@ a {
     list-style-type: none;
 }
 
+.page-number {
+    margin: 0 0.3em;
+}
+
 .pushable {
     position: relative;
     border: none;
